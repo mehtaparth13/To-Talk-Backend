@@ -1,0 +1,365 @@
+<style>
+ /* Price Table Styling */
+.price-table-container {
+  width: 500px;
+  font-family: "Montserrat", sans-serif;
+  margin: 32px auto;
+}
+
+.price-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 0, 0, .15); /* Outer border for the table */
+}
+
+.price-table-container th,
+.price-table-container td {
+  border: 1px solid rgba(0, 0, 0, .15); /* Inner borders for cells */
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.price-table-container th {
+  background-color: #008c5f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.price-table-container tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, .075);
+}
+
+/* Specifications Styling */
+  .specifications-container {
+    width: 100%; /* Set to 100% for responsive layout */
+    max-width: 500px;
+    font-family: "Montserrat", sans-serif;
+    margin: 32px auto;
+  }
+
+  .specifications-container .device-name {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .specifications-container h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .specifications-container h3 .icon svg {
+    height: 16px;
+  }
+
+  .specifications-container h3.active .icon {
+    background: #fff;
+    color: red;
+  }
+
+  .specifications-container .icon {
+    background: red;
+    border: 1px solid red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    transition: all 200ms ease;
+  }
+
+  .specifications-container h3.active .icon {
+    rotate: 180deg;
+  }
+
+  .specifications-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    display: none;
+  }
+
+  .specifications-container table th,
+  .specifications-container table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .specifications-container table th {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .specifications-container table td {
+    font-size: 16px;
+  }
+
+  .specifications-container table tr:nth-child(even) {
+    background: #eee;
+  }
+
+  /* Responsive Styling for Price Table */
+@media screen and (max-width: 640px) {
+  .price-table-container thead,
+  .price-table-container th {
+    display: none;
+  }
+  .price-table-container tr,
+  .price-table-container td {
+    display: block;
+  }
+  .price-table-container tr {
+    border: 1px solid rgba(0, 0, 0, .15); /* Border for each row in mobile view */
+    margin-bottom: 2rem;
+  }
+  .price-table-container td {
+    text-align: right;
+  }
+  .price-table-container td:before {
+    content: attr(data-label) ': ';
+    float: left;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  /* Responsive Styling for Specifications Table */
+  @media screen and (max-width: 640px) {
+    .specifications-container table,
+    .specifications-container table th,
+    .specifications-container table td {
+      display: block;
+      width: 100%;
+    }
+
+    .specifications-container table th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .specifications-container table td {
+      text-align: left;
+      padding: 10px;
+      position: relative;
+    }
+
+    .specifications-container table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  
+
+  /* Image Slider Styling */
+  .slider-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 32px auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .controls .prev,
+  .controls .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
+</style>
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjd-FVchBtjbzJLr-ULxT3NLBGm457LUJrNhRaWXUwmVLGx1SuZK3iZF1fVJ8rrwDtEJFgn25RIjnQSPmUyUAObNqGkw-vCp7cZ11794zY9KVb8Wx4fG4FAPnbbvgBAAwTEF9u0S9Tf8gsbPv7DiQxWyYGjvW-5fabfd6R9ZkE54ldS7g3Vxk29k4XZoRg/s16000/oneplus13%20side.png" style="width: 100%;">
+      </div>
+      
+    <div class="slide">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrha9msHMglDGyM22SmltLRLV6gFVIm2k80pFWYj6v6XJGVecLDfCsrFqf1OUxY2rBz0t7iWoIb7XuuqqORP3Avw0h2bS5D-r7XDi5fDFKWy4IvYvL9PNeK1IHRiV9zaj2M-yxR6Iv6cEdfGrBeuj9KCmbzs3XPNR-2QpwR4otZOsnLYn0uzX3hkI_2RQ/s16000/oneplus13%20camera.png"  style="width: 100%;">
+         </div>
+    
+      <div class="slide">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjd-FVchBtjbzJLr-ULxT3NLBGm457LUJrNhRaWXUwmVLGx1SuZK3iZF1fVJ8rrwDtEJFgn25RIjnQSPmUyUAObNqGkw-vCp7cZ11794zY9KVb8Wx4fG4FAPnbbvgBAAwTEF9u0S9Tf8gsbPv7DiQxWyYGjvW-5fabfd6R9ZkE54ldS7g3Vxk29k4XZoRg/s16000/oneplus13%20side.png" style="width: 100%;">
+      <!-- Add more images as needed -->
+    </div>
+  </div>
+ 
+  <div class="controls">
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+</div>
+
+<div class="specifications-container">
+  <div class="device-name">Realme GT 7 Pro Specifications</div>
+</div>
+
+<div class="price-table-container">
+  <div class="device-name">Realme GT 7 Pro</div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Realme GT 7 Pro</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Realme GT 7 Pro">12GB+256GB</td>
+        <td data-label="Price">RMB 4,499 (Rs. 53,200)</td>
+      </tr>
+      <tr>
+        <td data-label="Realme GT 7 Pro">12GB+512GB</td>
+        <td data-label="Price">RMB 4,899 (Rs. 57,900)</td>
+      </tr>
+      <tr>
+        <td data-label="Realme GT 7 Pro">16GB+512GB</td>
+        <td data-label="Price">RMB 5,299 (Rs. 62,600)</td>
+      </tr>
+      <tr>
+        <td data-label="Realme GT 7 Pro">24GB+1TB</td>
+        <td data-label="Price">RMB 5,999 (Rs. 70,900)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+const specificationsData = [
+  {
+    category: "Sensors",
+    details: [
+      { title: "Fingerprint Sensor", value: "YES" },
+      { title: "Fingerprint Sensor Position", value: "Side" },
+      { title: "Other Sensors", value: "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope",
+      },
+    ],
+  },
+];
+
+const specificationsContainer = document.querySelector(".specifications-container");
+
+const generateHTML = () => {
+  specificationsData.forEach((s) => {
+    const tableRowsHTML = s.details
+      .map((detail) => {
+        return `<tr>
+          <th data-label="${detail.title}">${detail.title}</th>
+          <td data-label="Value">${detail.value}</td>
+        </tr>`;
+      })
+      .join("");
+
+    const HTML = `<h3>
+        ${s.category} (${s.details.length})
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </span>
+      </h3>
+      <table class="responsive-table">
+        <tbody>
+          ${tableRowsHTML}
+        </tbody>
+      </table>`;
+
+    const category = document.createElement("div");
+    category.classList.add("category");
+    category.innerHTML = HTML;
+
+    specificationsContainer.appendChild(category);
+  });
+};
+
+generateHTML();
+
+// Expand/Collapse Logic
+const categoryHeadings = document.querySelectorAll(".specifications-container h3");
+
+categoryHeadings.forEach((h) => {
+  h.addEventListener("click", () => {
+    h.classList.toggle("active");
+    const table = h.nextElementSibling;
+
+    if (h.classList.contains("active")) {
+      table.style.display = "table";
+    } else {
+      table.style.display = "none";
+    }
+  });
+});
+
+  // Image Slider JavaScript
+ let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  const slider = document.querySelector('.slider');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+
+  function showSlide(index) {
+    currentIndex = (index + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function startAutoSlide() {
+    return setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 3000);
+  }
+
+  let autoSlide = startAutoSlide();
+
+  prevButton.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+    clearInterval(autoSlide);
+    autoSlide = startAutoSlide();
+  });
+
+  nextButton.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+    clearInterval(autoSlide);
+    autoSlide = startAutoSlide();
+  });
+</script>

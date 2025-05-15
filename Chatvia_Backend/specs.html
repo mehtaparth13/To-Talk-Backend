@@ -1,0 +1,503 @@
+<style>
+    /* Specifications Styling */
+    .specifications-container {
+      width: 500px;
+      font-family: "Montserrat", sans-serif;
+      margin: 32px auto;
+    }
+  
+    .specifications-container .device-name {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+  
+    .specifications-container h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 8px 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .specifications-container h3 .icon svg {
+      height: 16px;
+    }
+  
+    .specifications-container h3.active .icon {
+      background: #fff;
+      color: red;
+    }
+  
+    .specifications-container .icon {
+      background: red;
+      border: 1px solid red;
+      color: #fff;
+      border-radius: 50%;
+      padding: 4px;
+      display: flex;
+      transition: all 200ms ease;
+    }
+  
+    .specifications-container h3.active .icon {
+      rotate: 180deg;
+    }
+  
+    .specifications-container table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #eee;
+      margin-bottom: 8px;
+      display: none;
+    }
+  
+    .specifications-container table th,
+    .specifications-container table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  
+    .specifications-container table th {
+      text-align: left;
+      font-size: 14px;
+    }
+  
+    .specifications-container table td {
+      font-size: 16px;
+    }
+  
+    .specifications-container table tr:nth-child(even) {
+      background: #eee;
+    }
+  
+    /* Price Table Styling */
+    .price-table-container {
+      width: 500px;
+      font-family: "Montserrat", sans-serif;
+      margin: 32px auto;
+    }
+  
+    .price-table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .price-table-container th {
+      background-color: #008c5f;
+      color: #fff;
+      font-weight: 600;
+      padding: 1rem 1.5rem;
+      text-align: left;
+    }
+  
+    .price-table-container td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+  
+    .price-table-container tr:nth-child(even) td {
+      background-color: rgba(0, 0, 0, .075);
+    }
+  
+    @media screen and (max-width: 640px) {
+      .price-table-container thead,
+      .price-table-container th {
+        display: none;
+      }
+      .price-table-container tr,
+      .price-table-container td {
+        display: block;
+      }
+      .price-table-container tr {
+        border: 1px solid rgba(0, 0, 0, .15);
+        margin-bottom: 2rem;
+      }
+      .price-table-container td {
+        text-align: right;
+      }
+      .price-table-container td:before {
+        content: attr(data-label)': ';
+        float: left;
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+  
+  <div class="specifications-container">
+    <div class="device-name">POCO X6 Neo Specifications</div>
+  </div>
+  
+  <div class="price-table-container">
+    <div class="device-name">OnePlus 13 Price</div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">OnePlus 13</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="OnePlus 13">12GB+256GB</td>
+          <td data-label="Price">RMB 4,499 (Rs. 53,200)</td>
+        </tr>
+        <tr>
+          <td data-label="OnePlus 13">12GB+512GB</td>
+          <td data-label="Price">RMB 4,899 (Rs. 57,900)</td>
+        </tr>
+        <tr>
+          <td data-label="OnePlus 13">16GB+512GB</td>
+          <td data-label="Price">RMB 5,299 (Rs. 62,600)</td>
+        </tr>
+        <tr>
+          <td data-label="OnePlus 13">24GB+1TB</td>
+          <td data-label="Price">RMB 5,999 (Rs. 70,900)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  <script>
+    const specificationsData = [
+      {
+        category: "General",
+      details: [
+        {
+          title: "Launch Date",
+          value: "September 14, 2021 (Official)",
+        },
+        {
+          title: "Brand",
+          value: "POCO",
+        },
+        {
+          title: "Model",
+          value: "POCO X6 Pro",
+        },
+         {
+          title: "Display",
+          value: "6.67 inches",
+        },
+        {
+          title: "Processor",
+          value: "Mediatek Dimensity 6080(6nm)",
+        },
+        {
+          title: "Operating System",
+          value: "Android 13, MIUI 14",
+        },
+        {
+          title: "RAM",
+          value: "8GB | 12GB",
+        },
+        {
+          title: "Rear Camera",
+          value: "108 MP f/1.7 + 2 MP, f/2.4",
+        },
+        {
+          title: "Front Camera",
+          value: "16 MP",
+        },
+      ],
+    },
+  
+    {
+      category: "Body",
+      details: [
+        {
+          title: "Dimensions",
+          value: "161.1 x 75 x 7.7 mm (6.34 x 2.95 x 0.30 in)",
+        },
+        {
+          title: "SIM",
+          value: "Dual SIM (Nano-SIM, dual stand-by)",
+        },
+        {
+          title: "Weight",
+          value: "177.3 grams",
+        },
+        {
+          title: "Waterproof",
+          value: "Yes, Splash proof, IP54",
+        },
+        {
+          title: "Ruggedness	",
+          value:
+            "Dust proof",
+        },
+      ],
+    },
+    {
+      category: "Display",
+      details: [
+        {
+          title: "Display Type",
+          value: "Amoled",
+        },
+        {
+          title: "Screen Size",
+          value: "6.67 inches (16.94 cm)",
+        },
+        {
+          title: "Resolution",
+          value: "1080x2400 px (FHD+)",
+        },
+        {
+          title: "Aspect Ratio",
+          value: "20:9",
+        },
+        {
+          title: "Pixel Density",
+          value: "395 ppi",
+        },
+        {
+          title: "Screen Protection",
+          value: "Corning Gorilla Glass v5",
+        },
+        {
+          title: "Bezel-less display",
+          value: "Yes with punch-hole display",
+        },
+        {
+          title: "Touch Screen",
+          value: "Yes, Capacitive Touchscreen, Multi-touch",
+        },
+        {
+          title: "Refresh Rate",
+          value: "120Hz",
+        },
+        {
+          title: "Screen to Body Ratio",
+          value: "93.3%",
+        },
+      ],
+    },
+       {
+      category: "Camera",
+      details: [
+        {
+          title: "Camera Setup",
+          value: "Dual",
+        },
+        {
+          title: "Resolution",
+          value: "108 MP f/1.7, Wide Angle, Primary Camera, </br> 2 MP f/2.4, Depth Camera",
+        },
+        {
+          title: "Autofocus",
+          value: "Yes",
+        },
+        {
+          title: "Flash",
+          value:"Yes, LED Flash",
+        },
+         {
+          title: "Image Resolution",
+          value:"12000 x 9000 Pixels",
+        },
+         {
+          title: "Setting",
+          value:"Exposure compensation, ISO control",
+        },
+         {
+          title: "Shooting Modes",
+          value:"Continuous Shooting, </br> High Dynamic Range mode (HDR), </br> Beautify",
+        },
+         {
+          title: "Camera Features",
+          value:"10 x Digital Zoom,  </br>Auto Flash, </br> Face detection,  </br>Touch to focus, </br> Voice Shutter",
+        },
+         {
+          title: "Video Recording",
+          value:"1920x1080 @ 30 fps",
+        },
+        {
+          title: "Front Camera",
+          value:"	Single",
+        },
+        {
+          title: "Resolution",
+          value:"	16 MP, Primary Camera",
+        },
+        {
+          title: "Video Recording",
+          value:"1920x1080 @ 30 fps, </br> 1280x720 @ 30 fps",
+        },
+        {
+          title: "Video Recording Features",
+          value:
+            "Movie Frame, </br> Short Video Mode",
+        },
+      ],
+    },
+      {
+      category: "Battery",
+      details: [
+        {
+          title: "Capacity",
+          value: "5000mAh",
+        },
+        {
+          title: "Type",
+          value: "Li-Polymer",
+        },
+        {
+          title: "Removable",
+          value: "No",
+        },
+        {
+          title: "Quick Charging",
+          value: "Yes, Fast, 33W",
+        },
+        {
+          title: "USB Type-C",
+          value:
+            "Yes",
+        },
+      ],
+    },
+      {
+      category: "Network & Connectivity",
+      details: [
+        {
+          title: "SIM Slot(s)",
+          value: "Dual SIM, GSM+GSM",
+        },
+        {
+          title: "SIM Size",
+          value: "SIM1: Nano, SIM2: Nano (Hybrid)",
+        },
+        {
+          title: "Network Support",
+          value: "5G Supported in India, 4G Supported in India, 3G, 2G",
+        },
+        {
+          title: "SIM 1",
+          value: "5G Bands:FDD N1 / N3 / N5 / N8 / N28 TDD N40 / N78 </br> 4G Bands:TD-LTE 2300(band 40) / 2500(band 41) FD-LTE 2100(band 1) / 1800(band 3) / 900(band 8) / 700(band 28) / 850(band 5) </br> 3G Bands:UMTS 1900 / 2100 / 850 / 900 MHz </br> 2G Bands:GSM 1800 / 1900 / 850 / 900 MHz </br> GPRS:AvailableEDGE:Available",
+        },
+        {
+          title: "SIM 2",
+          value:
+            "5G Bands:FDD N1 / N3 / N5 / N8 / N28 TDD N40 / N78 </br> 4G Bands:TD-LTE 2300(band 40) / 2500(band 41) FD-LTE 2100(band 1) / 1800(band 3) / 900(band 8) / 700(band 28) / 850(band 5) </br> 3G Bands:UMTS 1900 / 2100 / 850 / 900 MHz </br> 2G Bands:GSM 1800 / 1900 / 850 / 900 MHz </br> GPRS:Available </br> EDGE:Available",
+        },
+        {
+          title: "SAR Value",
+          value: "Head: 0.854 W/kg, </br> Body: 0.710 W/kg",
+        },
+        {
+          title: "Wi-Fi",
+          value: "Yes, Wi-Fi 5 (802.11 a/b/g/n/ac) 5GHz",
+        },
+        {
+          title: "Bluetooth",
+          value: "Yes, v5.3",
+        },
+        {
+          title: "GPS",
+          value: "Yes with A-GPS, Glonass",
+        },
+        {
+          title: "USB Connectivity",
+          value: "Mass storage device, USB charging",
+        },
+      ],
+    },
+      {
+      category: "Multimedia",
+      details: [
+        {
+          title: "FM Radio",
+          value: "YES",
+        },
+        {
+          title: "Loudspeaker",
+          value: "YES",
+        },
+        {
+          title: "Audio Jack",
+          value: "3.5 mm",
+        },
+        {
+          title: "Audio Features",
+          value: "Dolby Atmos",
+        },
+      ],
+    },
+      {
+      category: "Sensors",
+      details: [
+        {
+          title: "Fingerprint Sensor",
+          value: "YES",
+        },
+        {
+          title: "Fingerprint Sensor Position",
+          value: "Side",
+        },
+        {
+          title: "Other Sensors",
+          value: "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope",
+        },
+      ],
+    },
+    ];
+  
+    const specificationsContainer = document.querySelector(".specifications-container");
+  
+    const generateHTML = () => {
+      specificationsData.forEach((s) => {
+        const tableRowsHTML = s.details
+          .map((detail) => {
+            return `<tr>
+            <th>${detail.title}</th>
+            <td>${detail.value}</td>
+          </tr>`;
+          })
+          .join("");
+  
+        const HTML = `<h3>
+            ${s.category} (${s.details.length})
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </h3>
+          <table>
+            <tbody>
+              ${tableRowsHTML}
+            </tbody>
+          </table>`;
+  
+        const category = document.createElement("div");
+        category.classList.add("category");
+        category.innerHTML = HTML;
+  
+        specificationsContainer.appendChild(category);
+      });
+    };
+  
+    generateHTML();
+  
+    const categoryHeadings = document.querySelectorAll(".specifications-container h3");
+  
+    categoryHeadings.forEach((h) => {
+      h.addEventListener("click", () => {
+        h.classList.toggle("active");
+        const table = h.nextElementSibling;
+  
+        if (h.classList.contains("active")) {
+          table.style.display = "table";
+          return;
+        }
+  
+        table.style.display = "none";
+      });
+    });
+  </script>
+  
